@@ -11,9 +11,8 @@ const BMIData = [
 const taille = document.querySelector("#taille");
 const poid = document.querySelector("#poid");
 const allInputs = document.querySelectorAll("input");
+const button = document.querySelector("button");
 
-allInputs.forEach(
-  addEventListener("keypress", (e) => {
-    console.log(e.key);
-  })
-);
+button.addEventListener("click", (e) => {
+  console.log(e);
+});
