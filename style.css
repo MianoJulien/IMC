@@ -14,12 +14,18 @@ body {
 }
 
 .app {
-  border: 2px solid white;
+  background: rgb(255, 251, 243);
+  border-radius: 2px;
+  box-shadow: 2px 4px 5px #363636a1;
+  margin: auto;
+  min-width: 500px;
+  max-width: 1000px;
+  width: 70%;
 }
-
 h1 {
   text-align: center;
   margin: 20px;
+  padding: 10px;
 }
 
 .inputs {
@@ -29,7 +35,22 @@ h1 {
   justify-content: space-around;
 }
 
+input {
+  padding: 5px;
+}
+
+label {
+  margin: 10px;
+}
+
 .btn {
   text-align: center;
-  margin: 20px;
+  padding: 20px;
+}
+button {
+  padding: 10px;
+  background: orange;
+  border: none;
+  border-radius: 2px;
+  text-decoration: black;
 }

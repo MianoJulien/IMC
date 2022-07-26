@@ -8,3 +8,12 @@ const BMIData = [
 ];
 
 // IMC = poids en kg / taille² en m
+const taille = document.querySelector("#taille");
+const poid = document.querySelector("#poid");
+const allInputs = document.querySelectorAll("input");
+
+allInputs.forEach(
+  addEventListener("keypress", (e) => {
+    console.log(e.key);
+  })
+);
