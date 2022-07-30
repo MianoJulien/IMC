@@ -11,4 +11,43 @@ const BMIData = [
 
 const form = document.querySelector("form");
 
-console.dir(form);
+form.addEventListener("submit", handleForm);
+
+function handleForm(e) {
+  e.preventDefault();
+  calculateBMI();
+}
+
+const inputs = document.querySelectorAll("input");
+
+function calculateBMI() {
+  const height = inputs[0].value;
+  const weight = inputs[1].value;
+
+  if (!height || !weight || height <= 0 || weight <= 0) {
+    handleError();
+    return;
+  }
+  const BMI = (weight / Math.pow(height / 100, 2)).toFixed(1);
+  console.log(BMI);
+  showResult(BMI);
+}
+
+const displayBMI = document.querySelector(".bmi-value");
+const result = document.querySelector(".result");
+
+function handleError() {
+  displayBMI.textContent = "Wops";
+  displayBMI.textContent = "inherit";
+  result.textContent = "Remplissez correctements les inputs.";
+}
+
+function showResult(BMI) {
+  const rank = BMIData.find((data) => {
+    if (BMI >= data.range[0] && BMI < data.range[1]) return data;
+    else if (typeof data.range === "number" && BMI >= data.range) return data;
+  });
+  displayBMI.textContent = BMI;
+  displayBMI.style.color = `${rank.color}`;
+  result.textContent = `Résultat : ${rank.name}`;
+}
